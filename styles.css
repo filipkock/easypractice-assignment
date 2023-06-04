@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #EDF2F8;
+}
+
+header {
+  /* Styling for the header section */
+  text-align: left;
+  padding-left: 20px;
+  padding: 5px;
+}
+
+header h1 {
+  /* Styling for the header title */
+  font-size: 20px;
+  margin: 0;
+}
+
+.container {
+  /* Styling for the container div */
+  display: flex;
+  margin: 50px;
+  gap: 20px;
+}
+
+.left-section {
+  /* Styling for the left section div */
+  flex: 3;
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px; 
+  padding: 10px;
+}
+
+.right-section {
+  /* Styling for the right section div */
+  flex: 9;
+  background-color: #FFFFFF;
+  border-radius: 5px; 
+  position: relative; 
+}
+
+.nav-wrapper {
+  /* Styling for the navigation wrapper */
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  /* Styling for the navigation list */
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+nav li {
+  /* Styling for the navigation list items */
+  padding: 10px;
+  cursor: pointer;
+}
+
+nav li.active {
+  /* Styling for the active navigation list item */
+  color: #568A74;
+}
+
+.app-content {
+  /* Styling for the app content */
+  text-align: center;
+}
+
+h2 {
+  /* Styling for the heading 2 */
+  color: #4B4E55;
+}
+
+p {
+  /* Styling for the paragraphs */
+  color: #4B4E55;
+}
+
+.dropdown {
+  /* Styling for the dropdown */
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px; 
+}
+
+.dropdown button {
+  /* Styling for the dropdown button */
+  background-color: #DAE5DF;
+  border: none;
+  color: #568A74;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.dropdown-content {
+  /* Styling for the dropdown content */
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f9f9f9;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+  min-width: 160px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.dropdown-content p {
+  /* Styling for the dropdown content paragraphs */
+  margin: 5px 0;
+}
+
+.dropdown:hover .dropdown-content {
+  /* Show dropdown content on hover */
+  display: block;
+}

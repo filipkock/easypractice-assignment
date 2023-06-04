@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <!-- Header displaying the page title -->
+      <h1>Client Page > Messi theGOAT</h1>
+    </header>
+    <div class="container">
+      <div class="left-section">
+        <!-- Left section displaying client details -->
+        <h2>Client Details</h2>
+        <p>Name: {{ clientName }}</p>
+        <p>Number: {{ clientNumber }}</p>
+        <p>Email: {{ clientEmail }}</p>
+      </div>
+      <div class="right-section">
+        <div class="nav-wrapper">
+          <!-- Navigation section -->
+          <nav>
+            <ul class="nav-list">
+              <li v-for="(app, index) in enabledApps" :key="index" :class="{ active: currentApp === app }" @click="currentApp = app">
+                {{ app }}
+              </li>
+            </ul>
+          </nav>
+          <div class="dropdown">
+            <!-- Dropdown to display all apps -->
+            <button @click="toggleDropdown">See All Apps</button>
+            <div class="dropdown-content" v-show="showDropdown">
+              <p v-for="(app, index) in allApps" :key="index">
+                <span>{{ app }}</span>
+                <button class="pin-button" @click.stop="toggleApp(app)">
+                  {{ isPinned(app) ? 'Unpin' : 'Pin' }}
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="app-content">
+          <!-- Content for the selected app -->
+          <h2>{{ currentApp }}</h2>
+          <p v-if="currentApp === 'Notifications'">Content for Notifications</p>
+          <p v-if="currentApp === 'Appointments'">Content for Appointments</p>
+          <p v-if="currentApp === 'Invoices'">Content for Invoices</p>
+          <p v-if="currentApp === 'Journal'">Content for Journal</p>
+          <p v-if="currentApp === 'Messages'">Content for Messages</p>
+          <p v-if="currentApp === 'Payments'">Content for Payments</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
